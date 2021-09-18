@@ -28,7 +28,7 @@ How to run the demo
   Once you have that, there are three commands to run:
 
   - generate_events.py creates a file, `events.json`, that contains raw events in JSON.
-  - create_db.py reads `events.json` and creates `db.bin`
+  - create_db.py reads `events.json` and creates `db.bin` 
   - query_db.py accepts UUIDs on the command lines, searches in `db.bin`, and reports how many values are associated with each UUID.
 
 
