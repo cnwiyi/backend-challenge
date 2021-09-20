@@ -1,6 +1,9 @@
 import json
 import sys
 import uuid
+import time
+
+start_time = time.time()
 
 with open("db.bin", "wb") as out:
     with open("events.json") as in_:
@@ -11,3 +14,5 @@ with open("db.bin", "wb") as out:
 
             out.write(key.bytes)
             out.write(value.bytes)
+
+print("--- %s seconds ---" % (time.time() - start_time))

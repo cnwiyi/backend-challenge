@@ -1,10 +1,9 @@
 import json
 import sys
 import uuid
+import time
 
-# open and write
-# use default way
-# use xml or bin file to encode db
+# optimize db by encoding content
 
 # def create_dict ():
 #     d = {}
@@ -31,7 +30,7 @@ from collections import defaultdict
 d = defaultdict(list)
 
 def create_dict ():
-    with open("db.txt", "w") as out:
+    with open("db.json", "w") as out:
         with open("events.json") as in_:
             for line in in_:
                 record = json.loads(line)
@@ -44,7 +43,10 @@ def create_dict ():
 
     # for key in d.keys():
     #     print(key, d[key], len(d[key]))
-
     return d
 
+start_time = time.time()
+
 create_dict ()
+
+print("--- %s seconds ---" % (time.time() - start_time))
